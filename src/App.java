@@ -38,17 +38,21 @@ public class App extends Application {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
-                if (scene.getPressedKeys().getOrDefault(KeyCode.LEFT, false)) {
-                    ship.turnLeft();
+                if (scene.getPressedKeys().getOrDefault(KeyCode.A, false)) {
+                    ship.moveLeft();
+                    System.out.println("LEFT");
                 }
-                if (scene.getPressedKeys().getOrDefault(KeyCode.RIGHT, false)) {
-                    ship.turnRight();
+                if (scene.getPressedKeys().getOrDefault(KeyCode.D, false)) {
+                    ship.moveRight();
+                    System.out.println("RIGHT");
                 }
-                if (scene.getPressedKeys().getOrDefault(KeyCode.UP, false)) {
-                    ship.accelerate();
+                if (scene.getPressedKeys().getOrDefault(KeyCode.W, false)) {
+                    ship.moveForward();
+                    System.out.println("UP");
                 }
-                if (scene.getPressedKeys().getOrDefault(KeyCode.DOWN, false)) {
-                    ship.decelerate();
+                if (scene.getPressedKeys().getOrDefault(KeyCode.S, false)) {
+                    ship.moveBackward();
+                    System.out.println("DOWN");
                 }
 
                 if (scene.getPressedKeys().getOrDefault(KeyCode.SPACE, false) && projectiles.size() < 5) {

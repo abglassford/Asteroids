@@ -17,6 +17,7 @@ public abstract class Entity {
         polygon.setTranslateY(y);
 
         this.movement = new Point2D(0, 0);
+
     }
 
     public void move() {
@@ -53,23 +54,27 @@ public abstract class Entity {
         this.movement = movement;
     }
 
+    public void moveLeft() {
+        this.polygon.setTranslateX(this.polygon.getTranslateX() - 1);
+    }
+
+    public void moveRight() {
+        this.polygon.setTranslateX(this.polygon.getTranslateX() + 1);
+    }
+
+    public void moveForward() {
+        this.polygon.setTranslateY(this.polygon.getTranslateY() - 1);
+    }
+
+    public void moveBackward() {
+        this.polygon.setTranslateY(this.polygon.getTranslateY() + 1);
+    }
+
     public void accelerate() {
         double changeX = Math.cos(Math.toRadians(polygon.getRotate())) * 0.05;
         double changeY = Math.sin(Math.toRadians(polygon.getRotate())) * 0.05;
 
         this.movement = this.movement.add(changeX, changeY);
-    }
-
-    public void decelerate() {
-        double changeX = Math.cos(Math.toRadians(polygon.getRotate())) * 0.05;
-        double changeY = Math.sin(Math.toRadians(polygon.getRotate())) * 0.05;
-
-        if (changeX < 0 || changeY < 0) {
-            this.movement = this.movement.subtract(this.movement.getX(), this.movement.getY());
-        } else {
-            this.movement = this.movement.subtract(changeX, changeY);
-        }
-
     }
 
     public boolean collide(Entity other) {
