@@ -55,19 +55,19 @@ public abstract class Entity {
     }
 
     public void moveLeft() {
-        this.polygon.setTranslateX(this.polygon.getTranslateX() - 1);
+        this.polygon.setTranslateX(this.polygon.getTranslateX() - 3);
     }
 
     public void moveRight() {
-        this.polygon.setTranslateX(this.polygon.getTranslateX() + 1);
+        this.polygon.setTranslateX(this.polygon.getTranslateX() + 3);
     }
 
     public void moveForward() {
-        this.polygon.setTranslateY(this.polygon.getTranslateY() - 1);
+        this.polygon.setTranslateY(this.polygon.getTranslateY() - 3);
     }
 
     public void moveBackward() {
-        this.polygon.setTranslateY(this.polygon.getTranslateY() + 1);
+        this.polygon.setTranslateY(this.polygon.getTranslateY() + 3);
     }
 
     public void accelerate() {
